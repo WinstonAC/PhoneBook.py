@@ -1,6 +1,8 @@
 # PhoneBook.py
 
 Contact_book is a Python library .
+the purpose of this APP is to have a internal phonebook. 
+the user can add contacts - delete contacts - update contacts
 
 ## Installation
 

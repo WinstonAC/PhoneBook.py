@@ -47,8 +47,10 @@ print(get_contact.phone)
 #update 
 new_name=str(input(" update contact? "))
 new_number= str(input(" input new number "))
+print(type(new_number))
 new_search= str(input("contact: "))
-hello = Contact.get(Contact.name == new_name)
+hello = Contact.get(Contact.name == new_search)
+
 hello.phone = new_number
 hello.save()
 new_num= Contact.get()
@@ -60,7 +62,7 @@ list_of_people = Contact.select()
 print(list_of_people)
 for people in list_of_people:
     print(people.name, people.phone)
-new_delete= str(input(" Delete Contact "))
+new_delete= str(input(" Delete Contact Name: "))
 
 hello2 = Contact.get(Contact.name == new_delete)
 hello2.delete_instance()
