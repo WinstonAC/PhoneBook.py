@@ -30,8 +30,8 @@ db.create_tables([Contact])
 # contact5= Contact(name='Kira', phone= '9179722525')
 # contact5.save()
 
-hello2 = str(input("Look at your list! Press enter to continue "))
-print("Here is yourt list of contacts: ")
+hello2 = str(input("View Contact list"))
+print("Contact list: ")
 
 list_of_people = Contact.select()
 print(list_of_people)
@@ -53,3 +53,27 @@ hello.phone = new_number
 hello.save()
 new_num= Contact.get()
 print(hello)
+
+#delete
+
+list_of_people = Contact.select()
+print(list_of_people)
+for people in list_of_people:
+    print(people.name, people.phone)
+new_delete= str(input(" Delete Contact "))
+
+hello2 = Contact.get(Contact.name == new_delete)
+hello2.delete_instance()
+list_of_people = Contact.select()
+print("Here is your new Contact list: ")
+print(list_of_people)
+for people in list_of_people:
+    print(people.name, people.phone)
+
+bye = (str("Contact Deleted"))
+print(bye)
+list_of_gente = Contact.select()
+print("Updated List: ")
+print(list_of_gente)
+for gente in list_of_gente:
+    print(gente.name, gente.phone)
